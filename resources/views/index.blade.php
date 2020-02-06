@@ -33,7 +33,7 @@
                     @foreach ($comments as $c)
 
                         <tr>
-                            <td>{{ $c -> name }}</td>
+                            <td>{{ $c -> user -> name }}</td>
                             <td>{{ $c -> comment }}</td>
                             <td>{{ $c -> updated_at -> format ('D jS F') }}</td>
                             <td>{{ $c -> likes }}</td>
