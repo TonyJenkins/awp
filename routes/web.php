@@ -19,4 +19,4 @@ Route::get ('/comment/{comment}/dislike/', 'LikesController@downVote');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
