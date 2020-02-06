@@ -1,11 +1,11 @@
 @extends ('layouts.app')
 
 @section ('page_title')
-    Guestbook | Edit a Comment from {{ $comment -> name }}
+    Guestbook | Edit a Comment from {{ $comment -> user -> name }}
 @endsection
 
 @section ('page_heading')
-    Edit the Comment from {{ $comment -> name }}
+    Edit the Comment from {{ $comment -> user -> name }}
 @endsection
 
 @section ('content')
@@ -23,7 +23,7 @@
                     User:
                 </label>
                 <div class="control">
-                    <input class="input" type="text" name="name" value="{{ $comment -> name }}" readonly>
+                    <input class="input" type="text" name="name" value="{{ $comment -> user -> name }}" readonly>
                 </div>
             </div>
 

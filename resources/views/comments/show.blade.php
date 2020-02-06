@@ -1,11 +1,11 @@
 @extends ('layouts.app')
 
 @section ('page_title')
-    Guestbook | Comment from {{ $comment -> name }}
+    Guestbook | Comment from {{ $comment -> user -> name }}
 @endsection
 
 @section ('page_heading')
-    Comment from {{ $comment -> name }}
+    Comment from {{ $comment -> user -> name }}
 @endsection
 
 @section ('content')
@@ -15,7 +15,7 @@
             <tbody>
             <tr>
                 <td>Name:</td>
-                <td>{{ $comment -> name }}</td>
+                <td>{{ $comment -> user -> name }}</td>
             </tr>
             <tr>
                 <td>Date:</td>
