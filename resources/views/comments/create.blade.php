@@ -23,7 +23,7 @@
                     User
                 </label>
                 <div class="control">
-                    <input class="input" type="text" name="name" placeholder="Enter User's Name">
+                    <input class="input" type="text" name="name" value="{{ Auth::user () -> name }}" readonly>
                 </div>
             </div>
 
@@ -40,7 +40,7 @@
                     Comment
                 </label>
                 <div class="control">
-                    <input class="input" type="text" name="comment" placeholder="Enter the Comment">
+                    <input class="input" type="text" name="comment" placeholder="Enter the Comment" autofocus>
                 </div>
             </div>
 
