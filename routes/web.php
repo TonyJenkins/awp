@@ -16,3 +16,7 @@ Route::post ('/add/', 'CommentController@store');
 
 Route::get ('/comment/{comment}/like/', 'LikesController@upVote');
 Route::get ('/comment/{comment}/dislike/', 'LikesController@downVote');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
