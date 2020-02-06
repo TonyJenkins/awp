@@ -11,12 +11,10 @@ class CommentController extends Controller {
     const COMMENTS_PER_PAGE = 5;
 
     const RULES = [
-        'name' => 'required|min:3|max:64',
         'comment' => 'required|min:2|max:256',
     ];
 
     const MESSAGES = [
-        'name.required' => 'The user\'s name is required.',
         'comment.required' => 'The comment cannot be empty.',
     ];
 
