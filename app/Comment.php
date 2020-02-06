@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Comment extends Model {
 
     protected $fillable = [
-        'name',
+        'user_id',
         'comment',
         'likes',
     ];
@@ -29,6 +29,12 @@ class Comment extends Model {
         $this -> timestamps = false;
         $this -> update ();
         $this -> timestamps = true;
+
+    }
+
+    public function user () {
+
+        return $this -> belongsTo (User::class);
 
     }
 }
