@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Comment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CommentController extends Controller {
 
@@ -39,7 +40,7 @@ class CommentController extends Controller {
 
         Comment::create ([
 
-            'name' => $request -> input ('name'),
+            'user_id' => Auth::user () -> id,
             'comment' => $request -> input ('comment'),
             'likes' => 0,
 
