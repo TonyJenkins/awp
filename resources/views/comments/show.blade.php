@@ -19,7 +19,7 @@
             </tr>
             <tr>
                 <td>Date:</td>
-                <td>{{ $comment -> updated_at -> format ('l js F') }}</td>
+                <td>{{ $comment -> updated_at -> format ('l jS F') }}</td>
             </tr>
             <tr>
                 <td></td>
