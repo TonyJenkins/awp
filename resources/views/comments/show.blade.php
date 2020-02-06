@@ -28,4 +28,8 @@
             </tbody>
         </table>
     </div>
+
+    <p>
+        <a class="button is-info" href="/">Back</a>
+    </p>
 @endsection
