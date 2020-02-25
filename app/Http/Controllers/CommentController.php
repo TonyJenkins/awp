@@ -64,9 +64,15 @@ class CommentController extends Controller {
 
         $request -> validate (self::RULES, self::MESSAGES);
 
-        $comment -> update ([
-            'comment' => $request -> comment,
-        ]);
+        if ($comment -> comment != request ('comment')) {
+
+            $comment -> update ([
+
+                'comment' => request ('comment'),
+                'updating_user_id' => Auth ::user () -> id,
+
+            ]);
+        }
 
         return redirect () -> action ('CommentController@index');
 
