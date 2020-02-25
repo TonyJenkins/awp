@@ -14,9 +14,17 @@
         <table class="table is-striped">
             <tbody>
             <tr>
-                <td>Name:</td>
+                <td>Original Name:</td>
                 <td>{{ $comment -> user -> name }}</td>
             </tr>
+
+            @if (isset ($comment -> updating_user))
+                <tr>
+                    <td class="table-row-label">Last Updated By:</td>
+                    <td>{{ $comment -> updating_user-> name }}</td>
+                </tr>
+            @endif
+
             <tr>
                 <td>Date:</td>
                 <td>{{ $comment -> updated_at -> format ('l jS F') }}</td>
