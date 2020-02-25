@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'AWP Guestbook'),
+    'name' => env('APP_NAME', 'Ultimate Comment Board'),
 
     /*
     |--------------------------------------------------------------------------
