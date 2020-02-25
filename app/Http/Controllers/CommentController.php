@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Comment;
+use App\Mail\CommentUpdated;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class CommentController extends Controller {
 
@@ -72,6 +75,9 @@ class CommentController extends Controller {
                 'updating_user_id' => Auth ::user () -> id,
 
             ]);
+
+            Mail::to ($comment -> user -> email) -> send (new CommentUpdated ($comment));
+
         }
 
         return redirect () -> action ('CommentController@index');
