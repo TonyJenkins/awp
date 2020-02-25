@@ -33,7 +33,7 @@
                         Last Updated By:
                     </label>
                     <div class="control">
-                        <input class="input" type="text" name="name" value="{{ $comment -> user -> name }}" readonly>
+                        <input class="input" type="text" name="name" value="{{ $comment -> updating_user -> name }}" readonly>
                     </div>
                 </div>
             @endif
