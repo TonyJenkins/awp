@@ -3,12 +3,17 @@
 
 Hello {{ $comment -> user -> name }},
 
-The body of your message.
+This is a courtesy email to let you know that your comment has been updated.
+@if (isset ($comment -> updating_user))
+    The change was made by {{ $comment -> updating_user -> name }}.
+@endif
 
-@component('mail::button', ['url' => ''])
-Button Text
+Click the button below to see the amended comment.
+
+@component('mail::button', ['url' => url ('/comment/' . $comment -> id)])
+Check Your Comment
 @endcomponent
 
-Thanks,<br>
+Gronda Gronda,<br>
 {{ config('app.name') }}
 @endcomponent
