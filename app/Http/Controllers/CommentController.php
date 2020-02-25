@@ -76,7 +76,9 @@ class CommentController extends Controller {
 
             ]);
 
-            Mail::to ($comment -> user -> email) -> send (new CommentUpdated ($comment));
+            if (($comment -> user -> id != Auth::user () -> id) && (!empty ($comment -> getChanges ()))) {
+                Mail::to ($comment -> user -> email) -> send (new CommentUpdated ($comment));
+            }
 
         }
 
