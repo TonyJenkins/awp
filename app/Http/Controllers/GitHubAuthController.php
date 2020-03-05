@@ -14,24 +14,23 @@ class GitHubAuthController extends Controller {
         return Socialite::driver ('github') -> redirect ();
     }
 
-    public function callback () {
+    public function callback()
+    {
+        $user = $this->findOrCreateUser(
+            Socialite::driver('github')->user()
+        );
 
-        $user = $this -> findOrCreateUser (Socialite::driver ('github') -> user ());
-
-        Auth::login ($user);
+        Auth::login($user);
 
         return redirect () -> action ('CommentController@index');
-
     }
 
-    private function findOrCreateUser ($githubUser) {
-
-        return User::firstOrCreate ([
-            'github_id' => $githubUser -> getId ()
-        ], [
-            'name' => $githubUser -> getName (),
-            'email' => $githubUser -> getEmail (),
-            'password' => bcrypt (Str::random (32)),
+    private function findOrCreateUser($gitHubUser)
+    {
+        return User::firstOrCreate(['github_id' => $gitHubUser->getId()], [
+            'name' => $gitHubUser->getName(),
+            'email' => $gitHubUser->getEmail(),
+            'password' => bcrypt(Str::random(32)),
         ]);
     }
 
