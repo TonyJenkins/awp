@@ -66,6 +66,9 @@
                         </div>
                     </form>
                 </div>
+
+                @include ('auth.github-login')
+
             </div>
         </div>
     </div>
